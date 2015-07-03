@@ -13,7 +13,8 @@ Project Guidelines:
 # -*- coding: utf-8 -*-
 
 # imports
-import sys
+import sys, time
+# import RPI.GPIO as GPIO
 
 # constants
 myVar = "\nHowdy!"
