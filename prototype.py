@@ -1,34 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-"""
-http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html
-
-"""
-
-import sys
-from faker import Faker
-
-# constants
-
-gen = Faker()
-
-# exception classes
-# interface functions
-# classes
-# internal functions & classes
-
-def main():
-    print gen.paragraph()
-
-if __name__ == '__main__':
-    status = main()
-    sys.exit(status)
-
-
-
-
-
 ''' 
 
 Project Guidelines: 
@@ -37,6 +6,33 @@ Project Guidelines:
 - The purpose of this file is to prototype out the basic functionality of this application in an efficient, pythonic, and readable manner.  
 - Initially, the prototype will produce debugging output onto stdout
 - When the prototype behaves as expected, I'll start wiring it to the 'Pi
+
+'''
+
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# imports
+import sys
+
+# constants
+myVar = "Howdy"
+
+# exception classes
+# interface functions
+# classes
+# internal functions & classes
+
+def main():
+    print (myVar)
+
+if __name__ == '__main__':
+    status = main()
+    sys.exit(status)
+
+
+
+''' 
 
 ****************************************************************
 
