@@ -16,7 +16,7 @@ Project Guidelines:
 import sys
 
 # constants
-myVar = "Howdy"
+myVar = "\nHowdy!"
 
 # exception classes
 # interface functions
