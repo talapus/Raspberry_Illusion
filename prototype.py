@@ -19,7 +19,7 @@ gen = Faker()
 # internal functions & classes
 
 def main():
-    print "Template"
+    print gen.paragraph()
 
 if __name__ == '__main__':
     status = main()
