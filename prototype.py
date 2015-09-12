@@ -1,19 +1,21 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 ''' 
 
 Project Guidelines: 
 
-- there is a good chance that I'll throw away all of this code. 
 - The purpose of this file is to prototype out the basic functionality of this application in an efficient, pythonic, and readable manner.  
 - Initially, the prototype will produce debugging output onto stdout
 - When the prototype behaves as expected, I'll start wiring it to the 'Pi
+- there is a good chance that I'll throw away all of this code before the project is done. 
 
 '''
 
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 # imports
-import sys, time
+import sys
+# import sys, time
 # import RPI.GPIO as GPIO
 
 # constants
@@ -23,6 +25,7 @@ myVar = "\nHowdy!"
 # interface functions
 # classes
 # internal functions & classes
+
 
 def main():
     print (myVar)
