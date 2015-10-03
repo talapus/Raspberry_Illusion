@@ -12,6 +12,9 @@ from faker import Faker
 fake = Faker()
 
 # I put the lights into an array, mostly to show you how to handle arrays in python
+# You can call elements from an array by number, like this:
+# print(LIGHT[2]) # <- this will print out the second light
+
 LIGHT = []
 LIGHT.append("%0000000010")  # The pins connected to the set of lights in mine shaft
 LIGHT.append("%0000000100")  # I don't use these light numbers but left them defined for clarity
@@ -26,6 +29,9 @@ BUTTONPRESSED = 0
 BUTTONRELEASED = 1
 
 # Likewise with the PINS - I put them in a dictionary
+# You call dictionary elements by key name:
+# print(PIN["Relay_Vibrator"])
+
 PIN = {}
 PIN[10] = "Relay_Vibrator"
 PIN[11] = "Relay_Roomlight"
@@ -78,7 +84,43 @@ def returnTunnelRide():
     return True
 
 
+
+def turnOnMineShaftLights():
+    print("Mineshaft Lights = ON # LOW Relay_RoomLight")
+
+
+def turnOnAllLights():
+    print("All Lights = ON")
+
+
+def turnOnMiningSounds():
+    print("Mining sounds = ON")
+
+
+def fadeSounds():
+    print("All sounds fade out now")
+
+
+def blinkLightOverOperator():
+    print("Blink Lights over the operator's head")
+    sleep(1)
+
+
+def 
+
+
 def startState():
+    turnOnMineshaftLights()
+    turnOnAllLights()
+    playMiningSounds()
+    while StartSwitchPressed == 0: # plays mining sounds until the button is pressed
+        sleep(1)
+    fadeSounds()
+    blinkLightOverOperator():
+
+
+    
+
     '''
     '********START STATE ***************************************************************
 
@@ -144,7 +186,24 @@ RETURN    'End of StrtState:
     '''
 
 
-def accelState:
+def accelState():
+    displayFirstLight()
+    sleep(2) # Wait to simulate manskip acceleration
+    startManSkipVibrator()
+    displaySecondLight()
+    sleep(1)
+    playIllusionSounds()
+    displayThirdLight()
+    sleep(1)
+    displayFourthLight()
+    sleep(1)
+    displayFifthLight()
+    sleep(1)
+    displaySixthLight()
+    sleep(1)
+    displaySeventhLight()
+    
+
     '''
     '******** ACCELERATION STATE PROCEDURE **********************************************
 
