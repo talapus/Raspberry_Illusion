@@ -106,9 +106,6 @@ def blinkLightOverOperator():
     sleep(1)
 
 
-def 
-
-
 def startState():
     turnOnMineshaftLights()
     turnOnAllLights()
@@ -119,7 +116,7 @@ def startState():
     blinkLightOverOperator():
 
 
-    
+
 
     '''
     '********START STATE ***************************************************************
