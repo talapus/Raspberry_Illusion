@@ -41,7 +41,13 @@ PIN[15] = "Bell_Sounder2"
 
 
 def set_initial_state():
-  print("\nset initial state")
+    print("\nset initial state: StrtState")
+    turnOnMineshaftLights()
+    turnOnAllLights()
+    playMiningSounds()
+    while StartSwitchPressed == 0: # plays mining sounds until the button is pressed
+        sleep(1)
+    fadeSounds()
 
 
 def start_sequence():
@@ -96,6 +102,24 @@ def fade_sounds():
 def blink_light_over_operator():
     print("Blink Lights over the operator's head")
     sleep(1)
+
+
+def accel_state():
+    displayFirstLight()
+    sleep(2) # Wait to simulate manskip acceleration
+    startManSkipVibrator()
+    displaySecondLight()
+    sleep(1)
+    playIllusionSounds()
+    displayThirdLight()
+    sleep(1)
+    displayFourthLight()
+    sleep(1)
+    displayFifthLight()
+    sleep(1)
+    displaySixthLight()
+    sleep(1)
+    displaySeventhLight()
 
 
 
