@@ -13,10 +13,6 @@ Python
 
 1. Install python with the command ``choco install -y python``
 
-Real UNIX
+Atom Editor
 
-1. If you want a real unix shell on windows, install virtualbox and vagrant
-1. make a directory
-1. Open the 'git-bash' terminal. Navigate into your Vagrant directory and type this command ``vagrant init ubuntu/trusty64`` to initialize it. You don't need to do this again unless you are creating a new box (which will have to be in another directory - one box per directory).
-1. Start up the virtual machine with the command ``vagrant up``. It stays running until you ``vagrant halt``.
-1. Now type the command ``vagrant ssh`` to log into your shiny new Ubuntu box.
+1. I highly recommend this free editor for working on your python projects. Install it with ``choco install -y atom``
