@@ -1,3 +1,7 @@
+![alt text
+Vagrant](http://www.unixmen.com/wp-content/uploads/2014/08/vagrant.jpg)
+
+
 How to use this project on windows:
 
 1. Install chocolatey packages https://chocolatey.org/
