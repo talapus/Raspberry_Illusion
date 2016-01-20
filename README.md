@@ -17,5 +17,4 @@ Atom Editor
 
 1. I highly recommend this free editor for working on your python projects. Install it with ``choco install -y atom``
 1. It's a full windows GUI application, like a beefed up notepad.
-1. It has built-in syntax color filters and syntax checkers.
-1. It's also themeable and the appearance is configurable, if you are into that. 
+1. It has built-in syntax error checkers and color themes which are both useful time savers. 
