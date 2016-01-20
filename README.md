@@ -1,6 +1,6 @@
 ![](https://upload.wikimedia.org/wikipedia/en/c/cb/Raspberry_Pi_Logo.svg =250x)
 
-<img src="https://upload.wikimedia.org/wikipedia/en/c/cb/Raspberry_Pi_Logo.svg" alt="Drawing" style="width: 20px;"/>
+<img src="https://upload.wikimedia.org/wikipedia/en/c/cb/Raspberry_Pi_Logo.svg" alt="Drawing" style="width: 20"/>
 
 How to use this project on windows:
 
