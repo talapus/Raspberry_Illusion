@@ -1,6 +1,6 @@
-![](https://upload.wikimedia.org/wikipedia/en/c/cb/Raspberry_Pi_Logo.svg =250x)
+![](https://www.raspberrypi.org/wp-content/uploads/2011/10/Raspi-PGB001.png)
 
-<img src="https://upload.wikimedia.org/wikipedia/en/c/cb/Raspberry_Pi_Logo.svg" alt="Drawing" style="width: 20"/>
+<!-- <img src="https://upload.wikimedia.org/wikipedia/en/c/cb/Raspberry_Pi_Logo.svg" alt="Drawing" style="width: 20"/> -->
 
 How to use this project on windows:
 
