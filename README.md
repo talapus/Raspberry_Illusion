@@ -1,4 +1,4 @@
-![alt text PI](https://upload.wikimedia.org/wikipedia/en/c/cb/Raspberry_Pi_Logo.svg)
+![](https://upload.wikimedia.org/wikipedia/en/c/cb/Raspberry_Pi_Logo.svg = 300x200)
 
 
 How to use this project on windows:
