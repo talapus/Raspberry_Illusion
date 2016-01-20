@@ -1,5 +1,4 @@
-![alt text
-Vagrant](http://www.unixmen.com/wp-content/uploads/2014/08/vagrant.jpg)
+![alt text PI](https://upload.wikimedia.org/wikipedia/en/c/cb/Raspberry_Pi_Logo.svg)
 
 
 How to use this project on windows:
