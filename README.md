@@ -1,10 +1,11 @@
 How to use this project on windows:
 
 1. Install chocolatey packages https://chocolatey.org/
-1. Open a command window with Administrator privileges. In that window, install git with the command 
-``choco install -y git``
+1. Open a command window with Administrator privileges. In that window, install git with the following command
+1. ``choco install -y git``
 1. When that completes, open another command window. It doesn't need to have special privileges.
-1. Navigate to your repositories directory and type the command ``git clone https://github.com/talapus/Raspberry_Illusion.git``
+1. Navigate to your repositories directory and clone the repository with the command 
+1. ``git clone https://github.com/talapus/Raspberry_Illusion.git``
 
 Some things to note
 
@@ -12,7 +13,7 @@ Some things to note
 
 Python
 
-1. Install python with the command ``choco install -y python``
+1. ``choco install -y python``
 
 Atom Editor
 
