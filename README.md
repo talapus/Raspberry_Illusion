@@ -12,7 +12,7 @@ Some things to note
 1. After installing choco and git, open your file manager and navigate to Program Files\Git and find the 'git-bash.exe' file. 
 2. Double click it, then pin the running application to your toolbar. 
 3. That's bash, and the core gnu tools. Tiny UNIX on your desktop! Almost anyway. Depending on how you use it, you'll find issues around the terminal type, and windows filesystem. As long as you don't want to change the shell, use really long file names, or install anything new, this should work fine. 
-4. If the limited nature of this shell becomes an obstacle and you want to stick with windows, the next level is to build a command line development image in virtualbox and vagrant then: ``$ vagrant init ubuntu/trusty32`` then ``$ vagrant up`` and then `$ `vagrant ssh`` in a git-bash/MINGW64 window. Use ``$ vagrant halt`` to stop the VM when you are done. 
+4. If the limited nature of this shell becomes an obstacle and you want to stick with windows, the next level is to build a command line development image in virtualbox and vagrant then: ``$ vagrant init ubuntu/trusty32`` then ``$ vagrant up`` and then ``$ vagrant ssh`` in a git-bash/MINGW64 window. Use ``$ vagrant halt`` to stop the VM when you are done. 
 
 Python
 
