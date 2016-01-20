@@ -5,11 +5,8 @@
 import sys
 import random
 import time
-from faker import Faker
-# import RPI.GPIO as GPIO
 
-# constants
-fake = Faker()
+# import RPI.GPIO as GPIO
 
 # I put the lights into an array, mostly to show you how to handle arrays in python
 # You can call elements from an array by number, like this:
@@ -45,12 +42,12 @@ PIN[15] = "Bell_Sounder2"
 
 
 def waitForButtonPress():
-    until StartSwitch == "Pressed":
-        StartSwitch = input("")
+    return True
+    # until StartSwitch == "Pressed":
+        # StartSwitch = input("")
 
 def playOrlosPresentation():
     return True
-
 
 def startSequence():
     print("This is the start sequence for v0.1")
@@ -84,7 +81,6 @@ def returnTunnelRide():
     return True
 
 
-
 def turnOnMineShaftLights():
     print("Mineshaft Lights = ON # LOW Relay_RoomLight")
 
@@ -113,7 +109,7 @@ def startState():
     while StartSwitchPressed == 0: # plays mining sounds until the button is pressed
         sleep(1)
     fadeSounds()
-    blinkLightOverOperator():
+    blinkLightOverOperator()
 
 
 
@@ -124,11 +120,8 @@ def startState():
   StrtState:
 
       'Set the initial state.
-
-      LOW Relay_RoomLight  'Turn on the mine-shaft lights and sodium vapor lights.
-
-      GOSUB all            'Turn on all lights in the shaft
-
+      LOW Relay_RoomLight       'Turn on the mine-shaft lights and sodium vapor lights.
+      GOSUB all                 'Turn on all lights in the shaft
           SEROUT 0,$8054,["2"]  'Turns on general mining sounds.
 
 '===============================================================================
@@ -199,7 +192,7 @@ def accelState():
     displaySixthLight()
     sleep(1)
     displaySeventhLight()
-    
+
 
     '''
     '******** ACCELERATION STATE PROCEDURE **********************************************
@@ -242,6 +235,7 @@ RETURN  'The end of the routine that accelerates the Illusion down the shaft
 '''
 
 def constSpeedState():
+    return True
     '''
     '************************************************************************************
     '******** CONSTANT SPEED STATE PROCEDURE ******************************************
@@ -334,7 +328,8 @@ GOSUB ExecLights
 RETURN   'End of constant speed state
 '''
 
-def execLights:
+def execLights():
+    return True
     '''
 
     PAUSE InterblockTime
@@ -392,6 +387,7 @@ RETURN   'end of routine that flashes the lights sequencely up the mine
 '''
 
 def decelState():
+    return True
     '''
     'The actions of this procedure can be considered the complement of those in the
 'Acceleration State Procedure. Speed of the simulated manskip is diminished to zero;
@@ -430,7 +426,8 @@ GOSUB NoLights
 RETURN   'End of deceleration state
 '''
 
-def stopState:
+def stopState():
+    return True
 '''
 'The following actions take place after the simulated ride has come to a stop.
 
@@ -472,6 +469,7 @@ RETURN  'End of routine that puts the Illusion in the STOP state
 '''
 
 def upStart():
+    return True
     '''The ride will accelerate in the up direction
 
 
@@ -517,6 +515,7 @@ RETURN 'End of the routine accelerating the the ride up
 '''
 
 def UpDecel():
+    return True
 '''
 GOSUB seven
 PAUSE 820
@@ -550,6 +549,7 @@ RETURN   'End of the up deceleration
 '''
 
 def bellRing():
+    return True
 '''
 FOR index1 = 1 TO index2
 HIGH Bell_Sounder         'Turn on the Bell circuit
@@ -560,7 +560,8 @@ NEXT
 '''
 
 
-def introFeatures:
+def introFeatures():
+    return True
 
     '''
     OUTS = (INS | %0000001111111110) 'Turn all lights back on
@@ -640,7 +641,7 @@ def nine():
 
 
 def all():
-    return(OUTS = ("INS | %0000001111111110)          'Turns on all 9 lights")
+    return("OUTS = (INS & %0000001111111110)          'Turns on all 9 lights")
 
 
 def noLights():
@@ -649,7 +650,8 @@ def noLights():
 
 def serviceWait():
         time.sleep(1)
-        while (startSwitch != "Pressed"):
+        return True
+        # while (startSwitch != "Pressed"):
             # wait until someone presses a button
 
 
@@ -661,7 +663,7 @@ def main():
     if buttonPressed == 1:
         print("You pressed the button")
     else:
-        playOrlosPresentation():
+        playOrlosPresentation()
     startTunnelRide()
     time.sleep(1)
     printLights()
