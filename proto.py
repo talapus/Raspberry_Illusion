@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 # imports
 import sys
@@ -38,21 +37,21 @@ def light(input):           # The pins connected to the set of lights in mine sh
 
 def pin(input):
     if input == 1:
-        PIN.append("Relay_Vibrator")
+        print("Relay_Vibrator GPIO %0000000000")
     elif input == 2:
-        PIN.append("Relay_Roomlight")
+        print("Relay_Roomlight GPIO %0000000000")
     elif input == 3:
-        PIN.append("Spare")
+        print("Spare GPIO %0000000000")
     elif input == 4:
-        PIN.append("Bell_Sounder")
+        print("Bell_Sounder GPIO %0000000000")
     elif input == 5:
-        PIN.append("Spare")
+        print("Spare GPIO %0000000000")
     elif input == 6:
-        PIN.append("StartSwitch")
+        print("StartSwitch GPIO %0000000000")
     elif input == 6:
-        PIN.append("Bell_Sounder2")
+        print("Bell_Sounder2 GPIO %0000000000")
     else:
-        print
+        pass
 
 
 def start_sequence():
@@ -111,9 +110,6 @@ def blink_light_over_operator():
     sleep(1)
 
 
-
-
-
 def set_initial_state():
     print('turn_On_mineshaft_lights()')
     print('turn_on_all_lights()')
@@ -151,207 +147,3 @@ while True:
     return_ride()
     sleep(1)
     end_sequence()
-
-'''
-Main:
-    'Set the pin I/O directions and Initialize
-      OUTS = %0000000000000000       'Initialize ports to off default is 0 anyway
-      DIRS = %0111111111111111       'The only input pin is bit 15.  7FFF hex
-
-      PAUSE 250 'Give the sound card time to initialize
-
-          IF (StartSwitch = Pressed )   THEN 'Just play Orlos presentation if StartSwitch
-                                         'is pressed during reset
-
-           LOW Relay_RoomLight  'Turn on the mine-shaft lights and sodium vapor lights.
-
-           GOSUB all            'Turn on all lights in the shaft
-           DO
-
-              SEROUT 0,$8054,["S"]     'Stop all sound
-
-              PAUSE 2000
-
-              SEROUT 0,$8054,["3"]  'Start Olro Presentation in the mine
-
-              PAUSE 3000
-
-               ServiceLoop:
-
-                IF (StartSwitch = Released ) THEN
-                PAUSE 100
-                GOTO ServiceLoop  'Watch for start switch being pressed
-                ENDIF
-                PAUSE 5000
-                IF (StartSwitch = Released  ) THEN
-                GOTO ServiceLoop  'Start service mode if switch pressed for 5+ seconds
-                ENDIF
-                   DO
-                      SEROUT 0,$8054,["S"]
-
-                      GOSUB all     ' turn on all shaft lights
-                      LOW Relay_RoomLight  'Turn on the mine-shaft lights and sodium vapor lights.
-                      HIGH Relay_Vibrater  'Start the Man Skip vibrator
-                      GOSUB ServiceWait
-                      LOW Relay_Vibrater   'Turn off vibrator under man skip
-                      GOSUB ServiceWait
-                      HIGH Relay_RoomLight 'Turn off room lights
-                      GOSUB one   'Turn lights on one at a time then wait for button press
-                      GOSUB ServiceWait
-                      GOSUB two
-                      GOSUB ServiceWait
-                      GOSUB three
-                      GOSUB ServiceWait
-                      GOSUB four
-                      GOSUB ServiceWait
-                      GOSUB five
-                      GOSUB ServiceWait
-                      GOSUB six
-                      GOSUB ServiceWait
-                      GOSUB seven
-                      GOSUB ServiceWait
-                      GOSUB eight
-                      GOSUB ServiceWait
-                      GOSUB nine
-                      GOSUB ServiceWait
-                      GOSUB all
-                      GOSUB ServiceWait
-                   LOOP
-           LOOP
-      ENDIF
-
-      'If we get past here, the StartStop switch was not pressed during the last reset
-
-          SEROUT 0,$8054,["S"]  'STOP all sound
-
-          PAUSE 1000
-
-        'Start periodic processing.
-      DO
-            GOSUB StrtState
-            GOSUB AccelState
-            UpDown = 1
-            GOSUB ConstSpeedState
-            GOSUB DecelState
-            GOSUB StpState
-            IF Flag3 = 0 THEN continue5 'The Illusion is not going back up if Flag3 = 0
-                                        'Flag3 is set in the previous StpState by how long
-                                        'the Start Button is depressed.
-            GOSUB  UpStart
-            UpDown = 0
-            GOSUB  ConstSpeedState
-            GOSUB  UpDecel
-            continue5:
-            GOSUB eight         'Turn on lights slowly
-            PAUSE 1000
-            GOSUB all
-            PAUSE 1000
-      LOOP            'End of the program loop
-  END                 'End of the Main program
-'************************************************************************************
-'''
-
-
-################################################################################################
-
-
-'''
-'**** MAIN PROGRAM *****************************************************************
-
-Main:
-    'Set the pin I/O directions and Initialize
-      OUTS = %0000000000000000       'Initialize ports to off default is 0 anyway
-      DIRS = %0111111111111111       'The only input pin is bit 15.  7FFF hex
-
-      PAUSE 250 'Give the sound card time to initialize
-
-          IF (StartSwitch = Pressed )   THEN 'Just play Orlos presentation if StartSwitch
-                                         'is pressed during reset
-
-           LOW Relay_RoomLight  'Turn on the mine-shaft lights and sodium vapor lights.
-
-           GOSUB all            'Turn on all lights in the shaft
-           DO
-
-              SEROUT 0,$8054,["S"]     'Stop all sound
-
-              PAUSE 2000
-
-              SEROUT 0,$8054,["3"]  'Start Olro Presentation in the mine
-
-              PAUSE 3000
-
-               ServiceLoop:
-
-                IF (StartSwitch = Released ) THEN
-                PAUSE 100
-                GOTO ServiceLoop  'Watch for start switch being pressed
-                ENDIF
-                PAUSE 5000
-                IF (StartSwitch = Released  ) THEN
-                GOTO ServiceLoop  'Start service mode if switch pressed for 5+ seconds
-                ENDIF
-                   DO
-                      SEROUT 0,$8054,["S"]
-
-                      GOSUB all     ' turn on all shaft lights
-                      LOW Relay_RoomLight  'Turn on the mine-shaft lights and sodium vapor lights.
-                      HIGH Relay_Vibrater  'Start the Man Skip vibrator
-                      GOSUB ServiceWait
-                      LOW Relay_Vibrater   'Turn off vibrator under man skip
-                      GOSUB ServiceWait
-                      HIGH Relay_RoomLight 'Turn off room lights
-                      GOSUB one   'Turn lights on one at a time then wait for button press
-                      GOSUB ServiceWait
-                      GOSUB two
-                      GOSUB ServiceWait
-                      GOSUB three
-                      GOSUB ServiceWait
-                      GOSUB four
-                      GOSUB ServiceWait
-                      GOSUB five
-                      GOSUB ServiceWait
-                      GOSUB six
-                      GOSUB ServiceWait
-                      GOSUB seven
-                      GOSUB ServiceWait
-                      GOSUB eight
-                      GOSUB ServiceWait
-                      GOSUB nine
-                      GOSUB ServiceWait
-                      GOSUB all
-                      GOSUB ServiceWait
-                   LOOP
-           LOOP
-      ENDIF
-
-      'If we get past here, the StartStop switch was not pressed during the last reset
-
-          SEROUT 0,$8054,["S"]  'STOP all sound
-
-          PAUSE 1000
-
-        'Start periodic processing.
-      DO
-            GOSUB StrtState
-            GOSUB AccelState
-            UpDown = 1
-            GOSUB ConstSpeedState
-            GOSUB DecelState
-            GOSUB StpState
-            IF Flag3 = 0 THEN continue5 'The Illusion is not going back up if Flag3 = 0
-                                        'Flag3 is set in the previous StpState by how long
-                                        'the Start Button is depressed.
-            GOSUB  UpStart
-            UpDown = 0
-            GOSUB  ConstSpeedState
-            GOSUB  UpDecel
-            continue5:
-            GOSUB eight         'Turn on lights slowly
-            PAUSE 1000
-            GOSUB all
-            PAUSE 1000
-      LOOP            'End of the program loop
-  END                 'End of the Main program
-'************************************************************************************
-'''
