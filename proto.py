@@ -1,38 +1,32 @@
 #!/usr/bin/env python
 
-# imports
 import sys
 import random
 from time import sleep
-
 # import RPI.GPIO as GPIO
-
-
-BUTTONPRESSED = 0
-BUTTONRELEASED = 1
 
 
 def light(input):           # The pins connected to the set of lights in mine shaft
     if input == 1:
-        print('GPIO %0000000010')
+        print('Light level 1 - GPIO %0000000010')
     elif input == 2:
-        print('GPIO %0000000100')
+        print('Light level 2 - GPIO %0000000100')
     elif input == 3:
-        print('GPIO %0000001000')
+        print('Light level 3 - GPIO %0000001000')
     elif input == 3:
-        print('GPIO %0000010000')
+        print('Light level 4 - GPIO %0000010000')
     elif input == 4:
-        print('GPIO %0000100000')
+        print('Light level 5 - GPIO %0000100000')
     elif input == 5:
-        print('GPIO %0001000000')
+        print('Light level 6 - GPIO %0001000000')
     elif input == 6:
-        print('GPIO %0010000000')
+        print('Light level 7 - GPIO %0010000000')
     elif input == 7:
-        print('GPIO %0100000000')    # This is the light directly above the button
+        print('Light level 8 - GPIO %0100000000')    # This is the light directly above the button
     elif input == 8:
-        print('GPIO %1000000000')
+        print('Light level 9 - GPIO %1000000000')
     else:
-        pass
+        print('ERROR')
 
 
 def pin(input):
@@ -51,7 +45,7 @@ def pin(input):
     elif input == 6:
         print("Bell_Sounder2 GPIO %0000000000")
     else:
-        pass
+        print('ERROR')
 
 
 def start_sequence():
@@ -133,6 +127,7 @@ def vibrator(input):
         print('Manskip Vibrator: OFF')
     else:
         print('ERROR: please specify ON or OFF')
+
 
 ### main ###
 
