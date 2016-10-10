@@ -107,11 +107,7 @@ def blink_light_over_operator():
 def set_initial_state():
     print('turn_On_mineshaft_lights()')
     print('turn_on_all_lights()')
-    print('play_mining_sounds()')
-    while StartSwitchPressed == 0: # plays mining sounds until the button is pressed
-        sleep(1)
-        play_mining_sounds()
-    fadeSounds()
+    print('play_mining_sounds()') # plays mining sounds until the button is pressed
 
 
 def initialize():
@@ -129,14 +125,21 @@ def vibrator(input):
         print('ERROR: please specify ON or OFF')
 
 
-### main ###
+def return_ride():
+    print ('return ride')
 
+
+
+
+
+### main ###
 
 while True:
     initialize()
     set_initial_state()
     start_sequence()
     sleep(1)
+    fade_sounds()
     light_sequence()
     sleep(1)
     return_ride()
