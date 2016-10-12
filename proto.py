@@ -48,12 +48,9 @@ def pin(input):
         print('ERROR')
 
 
-def start_sequence():
-  print("\nstart sequence")
-
 
 def end_sequence():
-  print("\nend sequence")
+    print("\nend sequence")
 
 
 def light_sequence():
@@ -104,11 +101,20 @@ def blink_light_over_operator():
     sleep(1)
 
 
+def start_sequence():
+    print("\nstart sequence")
+
+
 def set_initial_state():
+    button = 'not yet pressed'
     print('turn_On_mineshaft_lights()')
     print('turn_on_all_lights()')
     print('play_mining_sounds()') # plays mining sounds until the button is pressed
-
+    while True:
+        if button == 'pressed': # wait for the button to be pressed
+            break
+        else:
+            pass
 
 def initialize():
     print("OUTS = '%0000000000000000'")  #'Initialize ports to off default is 0 anyway
