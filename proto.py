@@ -129,9 +129,6 @@ def return_ride():
     print ('return ride')
 
 
-
-
-
 ### main ###
 
 while True:
