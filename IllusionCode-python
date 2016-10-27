@@ -115,6 +115,7 @@ def set_initial_state():
         else:
             pass
 
+
 def initialize():
     print("OUTS = '%0000000000000000'")  #'Initialize ports to off default is 0 anyway
     print("DIRS = '%0111111111111111'")  #'The only input pin is bit 15.  7FFF hex
